@@ -243,6 +243,7 @@
             this.btnPagar.TabIndex = 3;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = true;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // cmbProducto
             // 
@@ -251,7 +252,8 @@
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(148, 21);
             this.cmbProducto.TabIndex = 4;
-            this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
+            this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_Efectivo);
+            this.cmbProducto.SelectionChangeCommitted += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -268,6 +270,7 @@
             this.txtbCantidadCliente.Name = "txtbCantidadCliente";
             this.txtbCantidadCliente.Size = new System.Drawing.Size(148, 20);
             this.txtbCantidadCliente.TabIndex = 6;
+            this.txtbCantidadCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbCantidadCliente_KeyPress);
             // 
             // groupBox1
             // 

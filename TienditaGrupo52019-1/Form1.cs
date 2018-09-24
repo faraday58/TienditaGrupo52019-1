@@ -44,13 +44,14 @@ namespace TienditaGrupo52019_1
             catch (ApplicationException error)
             {
                 errorProv.SetError(txtbCantidadCliente, error.Message);
+                return -1;
             }
               catch (FormatException )
             {
                 errorProv.SetError(txtbCantidadCliente, "Cantidad no valida");
-
+                return -1;
             }
-            return -1;
+            
         }
 
         public bool Tarjeta(float total, float saldo, string NumeroTarjeta, string FechaVencimiento, string Cvv)
@@ -63,9 +64,12 @@ namespace TienditaGrupo52019_1
             miproducto = (Producto)productos[cmbProducto.SelectedIndex];
             txtbClavedelproducto.Text = miproducto.Clave;
             txtbPreciounidad.Text = Convert.ToString(miproducto.PrecioUnitario);
-            txtbAlmacen.Text = Convert.ToString(miproducto.Stock);
+            txtbAlmacen.Text = Convert.ToString(miproducto.Stock);            
+        }
 
-            
+        private void cmbProducto_Efectivo(object sender, EventArgs e)
+        {
+            rdbEfectivo.Checked = true;
         }
 
 
@@ -73,5 +77,37 @@ namespace TienditaGrupo52019_1
         {
             txtbEfectivo.Visible = true;  
         }
+
+        private void txtbCantidadCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(  e.KeyChar == (char)Keys.Enter   )
+            {
+                float tot = float.Parse(txtbCantidadCliente.Text) * float.Parse(txtbPreciounidad.Text);
+                lbResultadoTotal.Text = tot.ToString();
+                lbResultadoProducto.Text = miproducto.Nombre;
+                lbResultadoUnidades.Text = txtbCantidadCliente.Text;
+                if (rdbEfectivo.Checked)
+                {
+                    lbResultadoPago.Text = "Efectivo";
+                }
+                else
+                {
+                    lbResultadoPago.Text = "Tarjeta";
+                }
+
+            }
+
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            if(rdbEfectivo.Checked)
+            {
+                float cambio= Efectivo(float.Parse(lbResultadoTotal.Text), float.Parse(txtbEfectivo.Text));
+                MessageBox.Show("$"+cambio.ToString()," CAMBIO ");
+            }
+        }
+
     }
 }
+ 
