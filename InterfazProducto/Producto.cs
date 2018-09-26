@@ -1,8 +1,9 @@
 ﻿using System;
 
-namespace TienditaGrupo52019_1
+namespace ManejaProducto
+
 {
-    class Producto
+    public class Producto
     {
         #region Atributos
         private string nombre;

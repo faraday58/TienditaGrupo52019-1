@@ -32,15 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InterfazPago">
+      <HintPath>..\InterfazPago\bin\Debug\InterfazPago.dll</HintPath>
+    </Reference>
+    <Reference Include="InterfazProducto">
+      <HintPath>..\InterfazProducto\bin\Debug\InterfazProducto.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -51,12 +51,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMPago.cs" />
-    <Compile Include="Producto.cs" />
+    <Compile Include="FormTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTarjeta.Designer.cs">
+      <DependentUpon>FormTarjeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTarjeta.resx">
+      <DependentUpon>FormTarjeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Escudo Ingenieria.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoPayPal.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

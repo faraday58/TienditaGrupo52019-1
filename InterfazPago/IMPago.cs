@@ -1,4 +1,4 @@
-﻿namespace TienditaGrupo52019_1
+﻿namespace InterfazPago
 {
     public interface IMPago
     {

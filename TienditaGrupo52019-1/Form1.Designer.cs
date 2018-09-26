@@ -55,11 +55,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtbEfectivo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -153,6 +153,7 @@
             this.rdbTarjetacredito.TabStop = true;
             this.rdbTarjetacredito.Text = "Tarjeta de Credito";
             this.rdbTarjetacredito.UseVisualStyleBackColor = true;
+            this.rdbTarjetacredito.CheckedChanged += new System.EventHandler(this.rdbTarjetacredito_CheckedChanged);
             // 
             // label7
             // 
@@ -312,6 +313,10 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Usuario";
             // 
+            // errorProv
+            // 
+            this.errorProv.ContainerControl = this;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TienditaGrupo52019_1.Properties.Resources.Escudo_Ingenieria;
@@ -321,10 +326,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            // 
-            // errorProv
-            // 
-            this.errorProv.ContainerControl = this;
             // 
             // Form1
             // 
@@ -348,8 +349,8 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
