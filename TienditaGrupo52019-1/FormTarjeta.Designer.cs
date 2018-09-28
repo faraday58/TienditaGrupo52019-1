@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTotalPagar = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbprueba = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -47,7 +47,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblTotalPagar);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(52, 26);
             this.groupBox1.Name = "groupBox1";
@@ -63,14 +62,14 @@
             this.lblTotalPagar.Size = new System.Drawing.Size(0, 13);
             this.lblTotalPagar.TabIndex = 0;
             // 
-            // label2
+            // lbprueba
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(-3, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Total a pagar:";
+            this.lbprueba.AutoSize = true;
+            this.lbprueba.Location = new System.Drawing.Point(355, 35);
+            this.lbprueba.Name = "lbprueba";
+            this.lbprueba.Size = new System.Drawing.Size(82, 13);
+            this.lbprueba.TabIndex = 0;
+            this.lbprueba.Text = "Total a pagar: $";
             // 
             // label1
             // 
@@ -159,6 +158,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 293);
             this.Controls.Add(this.btnPago);
+            this.Controls.Add(this.lbprueba);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mtbVencimiento);
             this.Controls.Add(this.mtbCvv);
@@ -181,7 +181,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblTotalPagar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbprueba;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label14;

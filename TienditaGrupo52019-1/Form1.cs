@@ -85,8 +85,15 @@ namespace TienditaGrupo52019_1
             }
             if(rdbTarjetacredito.Checked)
             {
-                FormTarjeta formTarjeta = new FormTarjeta();
+                float TotalPagar =float.Parse( lbResultadoTotal.Text);
+                FormTarjeta formTarjeta = new FormTarjeta(TotalPagar);
                 formTarjeta.Show();
+                if(Tarjeta(TotalPagar, formTarjeta.Saldo, formTarjeta.Numerotarjeta, formTarjeta.Fecha,formTarjeta.Cvv))
+                {
+                    MessageBox.Show("Pago exitoso","Resultado de Pago");
+                }
+
+
             }
         }
 
@@ -121,15 +128,34 @@ namespace TienditaGrupo52019_1
 
         public bool Tarjeta(float total, float saldo, string NumeroTarjeta, string FechaVencimiento, string Cvv)
         {
-            throw new NotImplementedException();
+            string[] mesaño = FechaVencimiento.Split('/');
+
+            try
+            {
+                if(total > saldo)
+                {
+                    throw new ApplicationException("Fondos insuficiente, pobre");
+                    
+                    
+                }
+                
+                else if(int.Parse(mesaño[1]) < 18)
+                {
+                    throw new ApplicationException("Tarjeta Vencida");
+                }
+                
+                return true;
+            }
+            catch(ApplicationException error)
+            {
+                MessageBox.Show(error.Message, "¡¡¡PROBLEMA DETECTADO!!!");
+                return false;
+            }
         }
 
         #endregion
 
-        private void txtbCantidadCliente_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
  
