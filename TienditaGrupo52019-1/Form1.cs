@@ -123,9 +123,13 @@ namespace TienditaGrupo52019_1
         {
             throw new NotImplementedException();
         }
+
         #endregion
 
-      
+        private void txtbCantidadCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
  
